@@ -1,0 +1,38 @@
+Pseudocode: Student Grade Evaluation System
+
+START
+  DISPLAY "Enter Practical Assessment mark (0-100): "
+  READ practical
+
+  DISPLAY "Enter Theory Examination mark (0-100): "
+  READ theory
+
+  // Validate input is numeric
+  IF practical is NOT a number OR theory is NOT a number THEN
+    DISPLAY "Error: Please enter a numeric value only."
+    STOP
+  ENDIF
+
+  // Validate range 0-100
+  IF practical < 0 OR practical > 100 THEN
+    DISPLAY "Error: Practical mark must be between 0 and 100."
+    STOP
+  ENDIF
+
+  IF theory < 0 OR theory > 100 THEN
+    DISPLAY "Error: Theory mark must be between 0 and 100."
+    STOP
+  ENDIF
+
+  // Weighted calculation: Practical 40%, Theory 60%
+  final_mark = (practical * 0.40) + (theory * 0.60)
+
+  DISPLAY "Final weighted percentage: ", final_mark, "%"
+
+  // Pass / Fail decision
+  IF final_mark >= 50 THEN
+    DISPLAY "Status: PASS"
+  ELSE
+    DISPLAY "Status: FAIL"
+  ENDIF
+END 
